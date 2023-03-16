@@ -17,6 +17,7 @@ const connect = () => {
             console.log("Connected to DB!");
         })
         .catch((err) => {
+            console.log("error");
             throw err;
         })
 }
