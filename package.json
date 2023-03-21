@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
- 
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "start": "nodemon index.js"
   },
@@ -19,5 +21,6 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.0",
     "nodemon": "^2.0.20"
-  }
+  },
+  "gateway": 
 }
