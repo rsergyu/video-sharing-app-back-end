@@ -26,11 +26,12 @@ const connect = () => {
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
+app.use(cors({credentials: true, origin: ['http://localhost:3000', 'https://video-sharing-app-front-end.vercel.app']}));
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/comments', commentRoutes);
 app.use('/api/videos', videoRoutes);
+
 
 app.use((err, req, res, next )=>{
     const status = err.status || 500;
