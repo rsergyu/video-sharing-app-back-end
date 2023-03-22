@@ -33,7 +33,8 @@ export const signin = async (req,res,next) =>{
         const {password, ...other} = user._doc;
 
         res.cookie("access_token", token, {
-            httpOnly: true,
+            httpOnly: true,  maxAge: (new JWTService().jwtExpirySeconds * 
+                1000) ,
         }).status(200).json(other);
 
     }catch(err){
