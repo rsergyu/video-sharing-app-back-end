@@ -26,7 +26,7 @@ const connect = () => {
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(cors());
+app.use(cors({ credentials: true, origin: true}));
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/comments', commentRoutes);
