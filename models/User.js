@@ -25,6 +25,10 @@ const UserSchema = new mongoose.Schema({
     subscribedUsers: {
         type: [String],
     },
+    googleUser: {
+        type: Boolean,
+        default: false,
+    }
 
 },
 { timestamps: true}

@@ -111,8 +111,11 @@ export const sub = async (req,res,next) => {
 
 export const getByTag = async (req,res,next) => {
     const tags = req.query.tags.split(",")
+
+    const video = await Video.findById(req.params.id);
+
     try {
-        const videos = await Video.find({tags:{$in: tags}}).limit(20);
+        const videos = await Video.find({tags:{$in: video.tags.split(",")}}).limit(20);
 
         res.status(200).json(videos)
     } catch (err) {
